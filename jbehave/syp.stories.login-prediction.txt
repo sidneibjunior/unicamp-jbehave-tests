@@ -6,63 +6,23 @@ As a user
 I want to login into the system
 Scenario: Login with valid data
 Given I am on Share your predictions home page
-When I login as merlo2013 with password merlo2013 (FAILED)
-(org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
-Command duration or timeout: 74 milliseconds
-Build info: version: '2.35.0', revision: '8df0c6b', time: '2013-08-12 15:43:19'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '3.9.11-200.fc18.x86_64', java.version: '1.7.0_25'
-Session ID: 812d3a1b-d8b3-49dc-9678-0fb24f55df28
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{platform=LINUX, databaseEnabled=true, cssSelectorsEnabled=true, javascriptEnabled=true, acceptSslCerts=true, handlesAlerts=true, browserName=firefox, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=22.0}])
-Then I must see the button Log Out (NOT PERFORMED)
-And Your Lists screen must be opened with name Your Lists (NOT PERFORMED)
-And I click on logout button (NOT PERFORMED)
-When I login as merlo2013 with password merlo2013 (NOT PERFORMED)
-Then I must see the button Log Out (NOT PERFORMED)
-And Your Lists screen must be opened with name Your Lists (NOT PERFORMED)
-And I click on logout button (NOT PERFORMED)
-When I login as leandro with password 1234567 (NOT PERFORMED)
-Then I must see the button Log Out (NOT PERFORMED)
-And Your Lists screen must be opened with name Your Lists (NOT PERFORMED)
-And I click on logout button (NOT PERFORMED)
-When I login as brunotx1 with password 12345678 (NOT PERFORMED)
-Then I must see the button Log Out (NOT PERFORMED)
-And Your Lists screen must be opened with name Your Lists (NOT PERFORMED)
-And I click on logout button (NOT PERFORMED)
+When I login as merlo2013 with password merlo2013
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as merlo2013 with password merlo2013
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as leandro with password 1234567
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as brunotx1 with password 12345678
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
 
 Scenario: Login with invalid login
-Given I am on Share your predictions home page (FAILED)
-(org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.35.0', revision: '8df0c6b', time: '2013-08-12 15:43:19'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '3.9.11-200.fc18.x86_64', java.version: '1.7.0_25'
-Driver info: driver.version: MyDriver)
-When I login as merlonetti2013 with password merlo2013 (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlonetti with password merlo2013 (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlone with password merlo2013 (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlo2014 with password merlo2013 (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-
-Scenario: Login with invalid password
-Given I am on Share your predictions home page (FAILED)
-(org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.35.0', revision: '8df0c6b', time: '2013-08-12 15:43:19'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '3.9.11-200.fc18.x86_64', java.version: '1.7.0_25'
-Driver info: driver.version: MyDriver)
-When I login as merlo2013 with password merloXXXX (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlo2013 with password merlo20133 (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlo2013 with password merloBarbosa (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-When I login as merlo2013 with password merlonet (NOT PERFORMED)
-Then I must see the message Please try again. (NOT PERFORMED)
-
-syp.webdriver.SeleniumProvider.closeBrowser() (FAILED)
-(org.jbehave.core.failures.BeforeOrAfterFailed: Method closeBrowser (annotated with @AfterStory in class syp.webdriver.SeleniumProvider) failed: org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
-Build info: version: '2.35.0', revision: '8df0c6b', time: '2013-08-12 15:43:19'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '3.9.11-200.fc18.x86_64', java.version: '1.7.0_25'
-Driver info: driver.version: MyDriver)
-
+Given I am on Share your predictions home page
+When I login as merlonetti2013 with password merlo2013

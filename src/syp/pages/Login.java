@@ -17,7 +17,7 @@ public class Login {
 	public Login() {
 		helper = new SeleniumHelper();
 	}
-
+	
 	public void login(String user, String passwd) {
 		helper.findElement(loginLink).click();
 		type(helper.findElement(userName), user);

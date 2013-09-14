@@ -32,10 +32,10 @@ And The list must have the value 2 at line 4 and column 1
 And The list must have the value Campeonato Brasileiro at line 4 and column 2
 And The list must have the value September 07, 2013 at line 4 and column 3
 
-
 Scenario: Create an list of predictions with more than 50 characters
 
 Given I am on Share your predictions home page
+And I click on logout button
 And I login as merlo2013 with password merlo2013
 
 When I add the list of prediction aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

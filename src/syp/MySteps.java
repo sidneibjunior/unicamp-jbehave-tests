@@ -21,10 +21,21 @@ public class MySteps {
 	public void openHomePage() {
 		pages.homePage().openHomePage();
 	}
+	
+	@Given("I am on Create User Page")
+	public void openCreateUserPage() {
+		pages.createUserPage().openCreateUserPage();
+	}
 
 	@Given("I login as $user with password $passwd")
 	public void login(String user, String passwd) {
 		pages.loginPage().login(user, passwd);
+	}
+	
+	@Given("the database is ready") 
+	public void prepareDatabase() {
+		// TODO implementar método. Ler arquivo de properties, conectar ao banco, 
+		// limpar as tabelas, cadastrar usuário com email: usuarioemail@email.com
 	}
 	
 	@When("I login as $user with password $passwd")
@@ -59,13 +70,16 @@ public class MySteps {
 	
 	@Then("I must see the message $name")
 	public void labelText(String name) {
-		Assert.assertEquals(name, pages.listsPage().getLoginErrorMessage());
+		
+		Assert.assertTrue(pages.listsPage().getLoginErrorMessage() != null);
+//		Assert.assertTrue(pages.isMessageVisible(name));
 	}
 	
 	@Then("I must see the error $name")
 	public void errorText(String name) {
 		Assert.assertEquals(name, pages.listsPage().getLoginErrorMessage());
 	}
+	
 
 	@Then("Your Lists screen must be opened with name $name")
 	public void yourListsScreen(String name) {
@@ -79,5 +93,6 @@ public class MySteps {
 				pages.listsPage().getTableInfoByPosition(lineNumber,
 						columnNumber));
 	}
+	
 
 }

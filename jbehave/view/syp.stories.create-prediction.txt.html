@@ -30,16 +30,33 @@ And The list must have the value September 07, 2013 at line 2 and column 3
 When I add the list of prediction Campeonato Basquete
 Then Your Lists screen must be opened with name Your Lists
 And The list must have the value 3 at line 3 and column 1
-And The list must have the value Campeonato Basquete at line 3 and column 2
-And The list must have the value September 07, 2013 at line 3 and column 3
-When I add the list of prediction Campeonato Brasileiro
-Then Your Lists screen must be opened with name Your Lists
-And The list must have the value 2 at line 4 and column 1 (FAILED)
-(junit.framework.ComparisonFailure: null expected:<[2]> but was:<[4]>)
+And The list must have the value Campeonato Basquete at line 3 and column 2 (FAILED)
+(junit.framework.ComparisonFailure: null expected:<[Campeonato Basquete]> but was:<[Maíra]>)
+And The list must have the value September 07, 2013 at line 3 and column 3 (NOT PERFORMED)
+When I add the list of prediction Campeonato Brasileiro (NOT PERFORMED)
+Then Your Lists screen must be opened with name Your Lists (NOT PERFORMED)
+And The list must have the value 2 at line 4 and column 1 (NOT PERFORMED)
 And The list must have the value Campeonato Brasileiro at line 4 and column 2 (NOT PERFORMED)
 And The list must have the value September 07, 2013 at line 4 and column 3 (NOT PERFORMED)
 
-Scenario: 
+Scenario: Create an list of predictions with more than 50 characters
+Given I am on Share your predictions home page
+And I click on logout button (PENDING)
+And I login as merlo2013 with password merlo2013 (NOT PERFORMED)
+When I add the list of prediction aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2 (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction zzzzz zzzzz zzzzzzzzzzzz zzzzzz zzzzzzzzzz zzzzzzzz zzzz zzzzzzzzzzz zzzzzz zzzzz zzzz zzzzzz zzz zzzz (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+@Given("I click on logout button")
+@Pending
+public void givenIClickOnLogoutButton() {
+  // PENDING
+}
+
 
 
 

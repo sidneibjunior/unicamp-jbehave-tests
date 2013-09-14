@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>syp.stories.create-prediction</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="syp/stories/create-prediction.story" title="">
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="In order to">share what I think with other people</inOrderTo>
+  <asA keyword="As a">user</asA>
+  <iWantTo keyword="I want to">add my list of predictions</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="Create a valid list of predictions">
+<step outcome="successful">Given I am on Share your predictions home page</step>
+<step outcome="successful">And I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="successful">When I add the list of prediction <parameter>Ma&#237;ra</parameter></step>
+<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>1</parameter> at line <parameter>1</parameter> and column <parameter>1</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>Ma&#237;ra</parameter> at line <parameter>1</parameter> and column <parameter>2</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>1</parameter> and column <parameter>3</parameter></step>
+<step outcome="successful">When I add the list of prediction <parameter>Ta&#231;a Sulamericana</parameter></step>
+<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>2</parameter> at line <parameter>2</parameter> and column <parameter>1</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>Ta&#231;a Sulamericana</parameter> at line <parameter>2</parameter> and column <parameter>2</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>2</parameter> and column <parameter>3</parameter></step>
+<step outcome="successful">When I add the list of prediction <parameter>Campeonato Basquete</parameter></step>
+<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="successful">And The list must have the value <parameter>3</parameter> at line <parameter>3</parameter> and column <parameter>1</parameter></step>
+<step outcome="failed" keyword="FAILED">And The list must have the value <parameter>Campeonato Basquete</parameter> at line <parameter>3</parameter> and column <parameter>2</parameter><failure>junit.framework.ComparisonFailure: null expected:&lt;[Campeonato Basquete]&gt; but was:&lt;[Ma&#237;ra]&gt;</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>3</parameter> and column <parameter>3</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>Campeonato Brasileiro</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>2</parameter> at line <parameter>4</parameter> and column <parameter>1</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>Campeonato Brasileiro</parameter> at line <parameter>4</parameter> and column <parameter>2</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>4</parameter> and column <parameter>3</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Create an list of predictions with more than 50 characters">
+<step outcome="successful">Given I am on Share your predictions home page</step>
+<step outcome="pending" keyword="PENDING">And I click on logout button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>zzzzz zzzzz zzzzzzzzzzzz zzzzzz zzzzzzzzzz zzzzzzzz zzzz zzzzzzzzzzz zzzzzz zzzzz zzzz zzzzzz zzz zzzz</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
+<pendingMethod>@Given(&quot;I click on logout button&quot;)
+@Pending
+public void givenIClickOnLogoutButton() {
+  // PENDING
+}
+</pendingMethod>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

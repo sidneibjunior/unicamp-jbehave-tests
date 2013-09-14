@@ -31,3 +31,21 @@ And The list must have the value September 07, 2013 at line 4 and column 3 (NOT 
 
 Scenario: Create an list of predictions with more than 50 characters
 Given I am on Share your predictions home page
+And I click on logout button (PENDING)
+And I login as merlo2013 with password merlo2013 (NOT PERFORMED)
+When I add the list of prediction aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2 (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+When I add the list of prediction zzzzz zzzzz zzzzzzzzzzzz zzzzzz zzzzzzzzzz zzzzzzzz zzzz zzzzzzzzzzz zzzzzz zzzzz zzzz zzzzzz zzz zzzz (NOT PERFORMED)
+Then I must see the message Oops! Please provider a title (up to 50 characters) (NOT PERFORMED)
+@Given("I click on logout button")
+@Pending
+public void givenIClickOnLogoutButton() {
+  // PENDING
+}
+
+
+

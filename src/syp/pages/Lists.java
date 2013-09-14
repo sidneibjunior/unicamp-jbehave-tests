@@ -14,7 +14,8 @@ public class Lists {
 	private By pageTitle = By.xpath("//h2");
 	private By logoutButton = By.xpath("//input[@value='Log Out']");
 	
-	private By errorMessage = By.xpath("//b[text()='Please try again.']");
+	private By errorMessage = By.xpath("//text()[.='Please try again.']");
+//	private By errorMessage = By.xpath("//b[text()='Please try again.']");
 	private By errorTitleMessage = By.xpath("//span[text()='Oops! Please provider a title (up to 50 characters)']");
 
 	private String tableList = "//table[@class='report' and @title='Prediction Lists']";
@@ -64,7 +65,7 @@ public class Lists {
 	}
 
 	public String getLoginErrorMessage() {
-		return helper.findElement(errorTitleMessage).getText();
+		return helper.findElement(errorMessage).getText();
 	}
 
 }
