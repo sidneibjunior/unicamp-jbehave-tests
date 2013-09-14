@@ -1,0 +1,64 @@
+<story path="syp/stories/login-prediction.story" title="">
+<narrative keyword="Narrative:">
+  <inOrderTo keyword="In order to">share what I think with other people</inOrderTo>
+  <asA keyword="As a">user</asA>
+  <iWantTo keyword="I want to">login into the system</iWantTo>
+</narrative>
+<scenario keyword="Scenario:" title="Login with valid data">
+<step outcome="successful">Given I am on Share your predictions home page</step>
+<step outcome="failed" keyword="FAILED">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter><failure>org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 74 milliseconds
+Build info: version: &apos;2.35.0&apos;, revision: &apos;8df0c6b&apos;, time: &apos;2013-08-12 15:43:19&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.9.11-200.fc18.x86_64&apos;, java.version: &apos;1.7.0_25&apos;
+Session ID: 812d3a1b-d8b3-49dc-9678-0fb24f55df28
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=LINUX, databaseEnabled=true, cssSelectorsEnabled=true, javascriptEnabled=true, acceptSslCerts=true, handlesAlerts=true, browserName=firefox, browserConnectionEnabled=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=22.0}]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the button <parameter>Log Out</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on logout button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the button <parameter>Log Out</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on logout button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>leandro</parameter> with password <parameter>1234567</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the button <parameter>Log Out</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on logout button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>brunotx1</parameter> with password <parameter>12345678</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the button <parameter>Log Out</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on logout button</step>
+</scenario>
+<scenario keyword="Scenario:" title="Login with invalid login">
+<step outcome="failed" keyword="FAILED">Given I am on Share your predictions home page<failure>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.35.0&apos;, revision: &apos;8df0c6b&apos;, time: &apos;2013-08-12 15:43:19&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.9.11-200.fc18.x86_64&apos;, java.version: &apos;1.7.0_25&apos;
+Driver info: driver.version: MyDriver</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlonetti2013</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlonetti</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlone</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2014</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Login with invalid password">
+<step outcome="failed" keyword="FAILED">Given I am on Share your predictions home page<failure>org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.35.0&apos;, revision: &apos;8df0c6b&apos;, time: &apos;2013-08-12 15:43:19&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.9.11-200.fc18.x86_64&apos;, java.version: &apos;1.7.0_25&apos;
+Driver info: driver.version: MyDriver</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2013</parameter> with password <parameter>merloXXXX</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo20133</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2013</parameter> with password <parameter>merloBarbosa</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I login as <parameter>merlo2013</parameter> with password <parameter>merlonet</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Please try again.</parameter></step>
+</scenario>
+<step outcome="failed" keyword="FAILED">syp.webdriver.SeleniumProvider.closeBrowser()<failure>org.jbehave.core.failures.BeforeOrAfterFailed: Method closeBrowser (annotated with @AfterStory in class syp.webdriver.SeleniumProvider) failed: org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.35.0&apos;, revision: &apos;8df0c6b&apos;, time: &apos;2013-08-12 15:43:19&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.9.11-200.fc18.x86_64&apos;, java.version: &apos;1.7.0_25&apos;
+Driver info: driver.version: MyDriver</failure></step>
+</story>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>syp.stories.login-prediction</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: txt"><![CDATA[
+
+(syp/stories/login-prediction.story)
+Narrative:
+In order to share what I think with other people
+As a user
+I want to login into the system
+Scenario: Login with valid data
+Given I am on Share your predictions home page
+When I login as merlo2013 with password merlo2013
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as merlo2013 with password merlo2013
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as leandro with password 1234567
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+When I login as brunotx1 with password 12345678
+Then I must see the button Log Out
+And Your Lists screen must be opened with name Your Lists
+And I click on logout button
+
+Scenario: Login with invalid login
+Given I am on Share your predictions home page
+When I login as merlonetti2013 with password merlo2013
+Then I must see the message Please try again.
+When I login as merlonetti with password merlo2013
+Then I must see the message Please try again.
+When I login as merlone with password merlo2013
+Then I must see the message Please try again.
+When I login as merlo2014 with password merlo2013
+Then I must see the message Please try again.
+
+Scenario: Login with invalid password
+Given I am on Share your predictions home page
+When I login as merlo2013 with password merloXXXX
+Then I must see the message Please try again.
+When I login as merlo2013 with password merlo20133
+Then I must see the message Please try again.
+When I login as merlo2013 with password merloBarbosa
+Then I must see the message Please try again.
+When I login as merlo2013 with password merlonet
+Then I must see the message Please try again.
+
+
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>
