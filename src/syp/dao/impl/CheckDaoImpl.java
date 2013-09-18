@@ -90,4 +90,64 @@ public User consultaUser(String loginName){
 		}
 		return user;
 	}
+
+	public void limpaLista() {
+		// TODO Auto-generated method stub
+		if(connection == null)this.openConnection();
+		
+		String sql =  "DELETE FROM Prediction";
+	
+		PreparedStatement pstmt = null;
+		
+		try {			
+			pstmt = this.connection.prepareStatement(sql);
+			pstmt.execute();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		sql =  "DELETE FROM PredictionList";
+		
+		try {			
+			pstmt = this.connection.prepareStatement(sql);
+			pstmt.execute();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		sql =  "DELETE FROM UserRole";
+		
+		 pstmt = null;
+		
+		try {			
+			pstmt = this.connection.prepareStatement(sql);
+			pstmt.execute();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		sql =  "DELETE FROM Users";
+		
+		pstmt = null;
+		
+		try {			
+			pstmt = this.connection.prepareStatement(sql);
+			pstmt.execute();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			try {
+				pstmt.close();
+				this.connection.close();
+			} catch (Exception e) {}			
+		}
+	}
 }
