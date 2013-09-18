@@ -70,7 +70,7 @@ public class MyStories extends JUnitStories {
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(
 				codeLocationFromClass(this.getClass()),
-				"**/*create-user*.story", "**/*excluded*.story");
+				"**/*.story", "**/*excluded*.story");
 
 	}
 
