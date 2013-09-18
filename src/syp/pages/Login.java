@@ -11,6 +11,7 @@ public class Login {
 	private By userName = By.xpath("//input[@name='j_username']");
 	private By password = By.xpath("//input[@name='j_password']");
 	private By loginLink = By.xpath("//a[text()='Login']");
+	private By loginErrorMessage = By.xpath("//b[text()='Please try again.']");
 	
 	private By submit = By.xpath("//input[@value='Login']");
 
@@ -36,6 +37,10 @@ public class Login {
 
 	public void type(WebElement element, String string) {
 		element.sendKeys(string);
+	}
+	
+	public String getLoginErrorMessage() {
+		return helper.findElement(loginErrorMessage).getText();
 	}
 
 }

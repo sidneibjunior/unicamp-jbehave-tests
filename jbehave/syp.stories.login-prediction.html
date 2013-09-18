@@ -30,3 +30,24 @@
 <h2>Scenario: Login with invalid login</h2>
 <div class="step successful">Given I am on Share your predictions home page</div>
 <div class="step successful">When I login as <span class="step parameter">merlonetti2013</span> with password <span class="step parameter">merlo2013</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlonetti</span> with password <span class="step parameter">merlo2013</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlone</span> with password <span class="step parameter">merlo2013</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlo2014</span> with password <span class="step parameter">merlo2013</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+</div>
+<div class="scenario">
+<h2>Scenario: Login with invalid password</h2>
+<div class="step successful">Given I am on Share your predictions home page</div>
+<div class="step successful">When I login as <span class="step parameter">merlo2013</span> with password <span class="step parameter">merloXXXX</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlo2013</span> with password <span class="step parameter">merlo20133</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlo2013</span> with password <span class="step parameter">merloBarbosa</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+<div class="step successful">When I login as <span class="step parameter">merlo2013</span> with password <span class="step parameter">merlonet</span></div>
+<div class="step successful">Then I must see the login error message <span class="step parameter">Please try again.</span></div>
+</div>
+</div>

@@ -26,3 +26,23 @@
 <scenario keyword="Scenario:" title="Login with invalid login">
 <step outcome="successful">Given I am on Share your predictions home page</step>
 <step outcome="successful">When I login as <parameter>merlonetti2013</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlonetti</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlone</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlo2014</parameter> with password <parameter>merlo2013</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Login with invalid password">
+<step outcome="successful">Given I am on Share your predictions home page</step>
+<step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merloXXXX</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo20133</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merloBarbosa</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+<step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merlonet</parameter></step>
+<step outcome="successful">Then I must see the login error message <parameter>Please try again.</parameter></step>
+</scenario>
+</story>

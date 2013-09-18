@@ -1,5 +1,11 @@
 package syp.webdriver;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,8 +17,16 @@ public class PropertyWebdriver {
 	}
 
 	public static WebDriver getDriver() {
-		browserType browser = browserType.valueOf(System.getProperty("browser",
-				"FIREFOX"));
+		Properties properties = new Properties();
+		try {
+			File file = new File("syp.properties");
+			properties.load(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		browserType browser = browserType.valueOf(properties.getProperty("browser", "FIREFOX"));
 		switch (browser) {
 		case CHROME:
 			// Please define here the path for your Chrome driver

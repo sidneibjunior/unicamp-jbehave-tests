@@ -1,0 +1,257 @@
+<html>
+<head>
+<title>syp.stories.create-user</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="syp/stories/create-user.story" title="">
+<scenario keyword="Scenario:" title="Insert a new User">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name JFreitas, Screen Name Jussara Freitas, Email jussara@gmail.com, Password 123456789, Confirm Password 123456789, Captcha <parameter>xxx</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Thank you! It works! Yesss!!!</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Thank you! It works! Yesss!!!&apos;]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And the user <parameter>JFreitas</parameter> is inserted on the database</step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new user without filling the captcha">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name <parameter>Monique</parameter> Ribeiro, Email monique@email.com, Password Senha123, Confirm Password Senha123, Captcha <parameter>vazio</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="successful">Then I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with existing e-mail">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name JFreitas, Screen Name Jussara Freitas, Email jussara@gmail.com, Password 123456789, Confirm Password 123456789, Captcha <parameter>xxx</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Please try again. That user name (or email address) is already taken.</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Please try again. That user name (or email address) is already taken.&apos;]</failure></step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with invalid email">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name <parameter>Monique</parameter> Ribeiro, Email usuarioemail.com, Password Senha123, Confirm Password Senha123, Captcha <parameter>xxx</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="successful">Then I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with smaller fields of 6 characters">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name <parameter>Monique</parameter> Ribeiro, Email monique@email.com, Password Senha, Confirm Password Senha, Captcha <parameter>xxx</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Password is required, minimum 6 characters.</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Password is required, minimum 6 characters.&apos;]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Monique, Screen Name Moniq, Email monique@email.com, Password Monique, Confirm Password Monique, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="pending" keyword="PENDING">When I add Login Name LuanFarias, Screen Name Luan, Email lu_farias@gmail.com, Password L,Confirm Password L, Captcha xxx</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail.com, Password LF0000, Confirm Password LF0000, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail.com, Password LF000, Confirm Password LF000, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias@gmail.com, Password AaaaaZzzz, Confirm Password AaaaaZzzz, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias@gmail.com, Password LF, Confirm Password LF, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<pendingMethod>@When(&quot;I add Login Name LuanFarias, Screen Name Luan, Email lu_farias@gmail.com, Password L,Confirm Password L, Captcha xxx&quot;)
+@Pending
+public void whenIAddLoginNameLuanFariasScreenNameLuanEmailLu_fariasgmailcomPasswordLConfirmPasswordLCaptchaXxx() {
+  // PENDING
+}
+</pendingMethod>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with invalid email and smaller fields of 6 characters">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name <parameter>Monique</parameter> Ribeiro, Email monique@email.., Password QqqAA, Confirm Password QqqAA, Captcha <parameter>xxx</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Password is required, minimum 6 characters.</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Password is required, minimum 6 characters.&apos;]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Monique, Screen Name Mo Ri, Email monique@.com, Password Senha123, Confirm Password Senha123, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.,</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="pending" keyword="PENDING">When I add Login Name LuanFarias, add Screen Name Luan, Email lu_fariasgmail.com, Password L, Confirm Password L, Captcha xxx</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias.com, Password LF0000, Confirm Password LF0000, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail, Password LF000, Confirm Password LF000, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias, Password 123456789, Confirm Password 123456789, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters..</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email @gmail.com, Password LF, Confirm Password LF, Captcha <parameter>xxx</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<pendingMethod>@When(&quot;I add Login Name LuanFarias, add Screen Name Luan, Email lu_fariasgmail.com, Password L, Confirm Password L, Captcha xxx&quot;)
+@Pending
+public void whenIAddLoginNameLuanFariasAddScreenNameLuanEmailLu_fariasgmailcomPasswordLConfirmPasswordLCaptchaXxx() {
+  // PENDING
+}
+</pendingMethod>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with invalid email and without filling the captcha">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Josefa, Screen Name <parameter>Josefa</parameter> Arruda Magalh&#227;es, Email j_magalhaes@.com, Password JosefaMaga, Confirm Password JosefaMaga, Captcha <parameter>vazio</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="successful">Then I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="successful">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with smaller fields of 6 characters and without filling the captcha">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name <parameter>Monique</parameter> Ribeiro, Email monique@email.com, Password Senha, Confirm Password Senha, Captcha <parameter>vazio</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Password is required, minimum 6 characters.</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Password is required, minimum 6 characters.&apos;]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Monique, Screen Name Mo Ri, Email monique@email.com, Password Senha123, Confirm Password Senha123, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name LuanFarias, Screen Name Luan, Email lu_farias@gmail.com, Password L, Confirm Password L, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail.com, Password LF0000, Confirm Password LF0000, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail.com, Password LF000, Confirm Password LF000, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias@gmail.com, Password A123450Z, Confirm Password A123450Z, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias@gmail.com, Password AaaZz, Confirm Password AaaZz, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+</scenario>
+<scenario keyword="Scenario:" title="Insert a new User with smaller fields of 6 characters and with invalid email and without filling the captcha">
+<step outcome="successful">Given I am on Create User Page</step>
+<step outcome="successful">And the database is ready</step>
+<step outcome="successful">When I add Login Name Monique, Screen Name  Nome do Usuario, Email monique.com, Password Senha, Confirm Password Senha, Captcha <parameter>vazio</parameter></step>
+<step outcome="successful">And I click on Register button</step>
+<step outcome="failed" keyword="FAILED">Then I must see the message <parameter>Password is required, minimum 6 characters.</parameter><failure>junit.framework.AssertionFailedError: Could not satisfy the condition: Waiting for elementBy.xpath: //span[text()=&apos;Password is required, minimum 6 characters.&apos;]</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Usuar, Screen Name Moniq, Email usu, Password 12345, Confirm Password 12345, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Monique, Screen Name Mo Ri, Email mon12.com, Password Senha123, Confirm Password Senha123, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name LuanFarias, Screen Name Luan, Email lu_farias_gmail.com, Password L, Confirm Password L, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias de Albuquerque, Email lu_farias.com, Password LF0000z, Confirm Password LF0000z, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name <parameter>Luan</parameter> Farias, Email lu_farias@gmail, Password LF000, Confirm Password LF000, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Password is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Given I am on Create User Page</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When I add Login Name Luan, Screen Name Luan, Email lu_farias, Password 123456789, Confirm Password 123456789, Captcha <parameter>vazio</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I click on Register button</step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Login Name is required, must be at least 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Screen Name is required, minimum 6 characters.</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Valid email address is required (in case you forget your password).</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I must see the message <parameter>Please type in the fuzzy characters (CAPTCHA)</parameter></step>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>
