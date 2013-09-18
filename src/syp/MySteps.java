@@ -6,11 +6,12 @@ import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
+import syp.dao.impl.CheckDaoImpl;
+import syp.dao.impl.User;
 import syp.pages.Pages;
 import syp.webdriver.SeleniumHelper;
 
 public class MySteps {
-	private Pages pages;
 	public SeleniumHelper helper;
 
 	public MySteps() {
@@ -36,6 +37,10 @@ public class MySteps {
 	public void prepareDatabase() {
 		// TODO implementar método. Ler arquivo de properties, conectar ao banco, 
 		// limpar as tabelas, cadastrar usuário com email: usuarioemail@email.com
+		User user = new User();
+		CheckDaoImpl checkDAOcondition = new CheckDaoImpl();
+		user = checkDAOcondition.consultaUser("teste01");
+		System.out.println(user.getEmail());
 	}
 	
 	@When("I login as $user with password $passwd")

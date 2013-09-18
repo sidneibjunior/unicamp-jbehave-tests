@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #org.jbehave.core.reporters.PostStoryStatisticsCollector
 #Tue Sep 17 21:07:42 BRT 2013
 duration=31309
@@ -21,3 +22,5 @@ stepsIgnorable=0
 givenStoryScenariosNotAllowed=0
 scenariosFailed=1
 givenStoryScenariosSuccessful=0
+=======
+>>>>>>> DaoImpl

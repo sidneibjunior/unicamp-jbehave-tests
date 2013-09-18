@@ -7,6 +7,7 @@ I want to login into the system
 Scenario: Login with valid data
 Given I am on Share your predictions home page
 When I login as merlo2013 with password merlo2013
+<<<<<<< HEAD
 Then I must see the button Log Out
 And Your Lists screen must be opened with name Your Lists
 And I click on logout button
@@ -46,3 +47,5 @@ When I login as merlo2013 with password merlonet
 Then I must see the login error message Please try again.
 
 
+=======
+>>>>>>> DaoImpl

@@ -6,6 +6,7 @@ I want to add my list of predictions
 Scenario: Create a valid list of predictions
 
 Given I am on Share your predictions home page
+Given the database is ready
 And I login as merlo2013 with password merlo2013
 
 When I add the list of prediction Maíra
