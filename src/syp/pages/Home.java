@@ -15,7 +15,8 @@ public class Home {
 	}
 
 	public void openHomePage() {
-		helper.openUrl("http://54.221.210.14/predict/");
+		//helper.openUrl("http://54.221.210.14/predict/");
+		helper.openUrl("http://192.168.0.10:8080/predict/");
 	}
 	
 	

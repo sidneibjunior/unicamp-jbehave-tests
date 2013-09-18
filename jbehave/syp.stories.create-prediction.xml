@@ -6,45 +6,5 @@
 </narrative>
 <scenario keyword="Scenario:" title="Create a valid list of predictions">
 <step outcome="successful">Given I am on Share your predictions home page</step>
+<step outcome="successful">Given the database is ready</step>
 <step outcome="successful">And I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
-<step outcome="successful">When I add the list of prediction <parameter>Ma&#237;ra</parameter></step>
-<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>1</parameter> at line <parameter>1</parameter> and column <parameter>1</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>Ma&#237;ra</parameter> at line <parameter>1</parameter> and column <parameter>2</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>1</parameter> and column <parameter>3</parameter></step>
-<step outcome="successful">When I add the list of prediction <parameter>Ta&#231;a Sulamericana</parameter></step>
-<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>2</parameter> at line <parameter>2</parameter> and column <parameter>1</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>Ta&#231;a Sulamericana</parameter> at line <parameter>2</parameter> and column <parameter>2</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>2</parameter> and column <parameter>3</parameter></step>
-<step outcome="successful">When I add the list of prediction <parameter>Campeonato Basquete</parameter></step>
-<step outcome="successful">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And The list must have the value <parameter>3</parameter> at line <parameter>3</parameter> and column <parameter>1</parameter></step>
-<step outcome="failed" keyword="FAILED">And The list must have the value <parameter>Campeonato Basquete</parameter> at line <parameter>3</parameter> and column <parameter>2</parameter><failure>junit.framework.ComparisonFailure: null expected:&lt;[Campeonato Basquete]&gt; but was:&lt;[Ma&#237;ra]&gt;</failure></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>3</parameter> and column <parameter>3</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>Campeonato Brasileiro</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>2</parameter> at line <parameter>4</parameter> and column <parameter>1</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>Campeonato Brasileiro</parameter> at line <parameter>4</parameter> and column <parameter>2</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And The list must have the value <parameter>September 07, 2013</parameter> at line <parameter>4</parameter> and column <parameter>3</parameter></step>
-</scenario>
-<scenario keyword="Scenario:" title="Create an list of predictions with more than 50 characters">
-<step outcome="successful">Given I am on Share your predictions home page</step>
-<step outcome="pending" keyword="PENDING">And I click on logout button</step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">And I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When I add the list of prediction <parameter>zzzzz zzzzz zzzzzzzzzzzz zzzzzz zzzzzzzzzz zzzzzzzz zzzz zzzzzzzzzzz zzzzzz zzzzz zzzz zzzzzz zzz zzzz</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then I must see the message <parameter>Oops! Please provider a title (up to 50 characters)</parameter></step>
-<pendingMethod>@Given(&quot;I click on logout button&quot;)
-@Pending
-public void givenIClickOnLogoutButton() {
-  // PENDING
-}
-</pendingMethod>
-</scenario>
-</story>

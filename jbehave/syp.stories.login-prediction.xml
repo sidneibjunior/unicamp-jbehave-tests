@@ -7,22 +7,3 @@
 <scenario keyword="Scenario:" title="Login with valid data">
 <step outcome="successful">Given I am on Share your predictions home page</step>
 <step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
-<step outcome="successful">Then I must see the button <parameter>Log Out</parameter></step>
-<step outcome="successful">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And I click on logout button</step>
-<step outcome="successful">When I login as <parameter>merlo2013</parameter> with password <parameter>merlo2013</parameter></step>
-<step outcome="successful">Then I must see the button <parameter>Log Out</parameter></step>
-<step outcome="successful">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And I click on logout button</step>
-<step outcome="successful">When I login as <parameter>leandro</parameter> with password <parameter>1234567</parameter></step>
-<step outcome="successful">Then I must see the button <parameter>Log Out</parameter></step>
-<step outcome="successful">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And I click on logout button</step>
-<step outcome="successful">When I login as <parameter>brunotx1</parameter> with password <parameter>12345678</parameter></step>
-<step outcome="successful">Then I must see the button <parameter>Log Out</parameter></step>
-<step outcome="successful">And <parameter>Your Lists</parameter> screen must be opened with name <parameter>Your Lists</parameter></step>
-<step outcome="successful">And I click on logout button</step>
-</scenario>
-<scenario keyword="Scenario:" title="Login with invalid login">
-<step outcome="successful">Given I am on Share your predictions home page</step>
-<step outcome="successful">When I login as <parameter>merlonetti2013</parameter> with password <parameter>merlo2013</parameter></step>
