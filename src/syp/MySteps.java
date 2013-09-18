@@ -13,6 +13,7 @@ import syp.webdriver.SeleniumHelper;
 
 public class MySteps {
 	public SeleniumHelper helper;
+	public Pages pages;
 
 	public MySteps() {
 		

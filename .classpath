@@ -60,6 +60,6 @@
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/xpp3_min.jar"/>
 	<classpathentry kind="lib" path="lib/xstream.jar"/>
-	<classpathentry kind="lib" path="/MySQLProject/jars/mysql-connector-java-5.1.25-bin.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.25-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
