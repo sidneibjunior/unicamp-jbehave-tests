@@ -9,34 +9,33 @@ import java.util.List;
 
 import syp.dao.utils.ConnectionFactory;
 
-
-
 public class CheckDaoImpl {
 	private Connection connection;
-	
-	private void openConnection(){
+
+	private void openConnection() {
 		//
-		this.connection = new ConnectionFactory().getConnection();		
+		this.connection = new ConnectionFactory().getConnection();
 	}
-	
-	public CheckDaoImpl(){
+
+	public CheckDaoImpl() {
 		this.openConnection();
 	}
-	
-	public List<User> listaUser(){
-		
-		if(connection == null)this.openConnection();
+
+	public List<User> listaUser() {
+
+		if (connection == null)
+			this.openConnection();
 
 		String sql = "SELECT * FROM Users";
 
 		List<User> Users = new ArrayList<User>();
 
 		PreparedStatement pstmt = null;
-		try {			
+		try {
 			pstmt = this.connection.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 
-			while(rs.next()){
+			while (rs.next()) {
 				User user = new User();
 				user.setLoginName(rs.getString("LoginName"));
 				user.setScreenName(rs.getString("ScreenName"));
@@ -47,107 +46,112 @@ public class CheckDaoImpl {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				pstmt.close();
 				this.connection.close();
-			} catch (Exception e) {}			
+			} catch (Exception e) {
+			}
 		}
 
-		return Users;		
+		return Users;
 	}
-	
-public User consultaUser(String loginName){
-		
-		if(connection == null)this.openConnection();
+
+	public User consultaUser(String loginName) {
+
+		if (connection == null)
+			this.openConnection();
 
 		String sql = "SELECT * FROM Users WHERE LoginName = ?";
 
 		User user = null;
 
 		PreparedStatement pstmt = null;
-		try {			
+		try {
 			pstmt = this.connection.prepareStatement(sql);
 			pstmt.setString(1, loginName);
-			
+
 			ResultSet rs = pstmt.executeQuery();
-			
-			while(rs.next()){
+
+			while (rs.next()) {
 				user = new User();
 				user.setLoginName(rs.getString("LoginName"));
 				user.setScreenName(rs.getString("ScreenName"));
-				user.setEmail(rs.getString("Email"));			
+				user.setEmail(rs.getString("Email"));
 			}
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				pstmt.close();
 				this.connection.close();
-			} catch (Exception e) {}			
+			} catch (Exception e) {
+			}
 		}
 		return user;
 	}
 
 	public void limpaLista() {
 		// TODO Auto-generated method stub
-		if(connection == null)this.openConnection();
-		
-		String sql =  "DELETE FROM Prediction";
-	
+		if (connection == null)
+			this.openConnection();
+
+		String sql = "DELETE FROM Prediction";
+
 		PreparedStatement pstmt = null;
-		
-		try {			
+
+		try {
 			pstmt = this.connection.prepareStatement(sql);
 			pstmt.execute();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
-		sql =  "DELETE FROM PredictionList";
-		
-		try {			
+
+		sql = "DELETE FROM PredictionList";
+
+		try {
 			pstmt = this.connection.prepareStatement(sql);
 			pstmt.execute();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
-		sql =  "DELETE FROM UserRole";
-		
-		 pstmt = null;
-		
-		try {			
-			pstmt = this.connection.prepareStatement(sql);
-			pstmt.execute();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-		sql =  "DELETE FROM Users";
-		
+
+		sql = "DELETE FROM UserRole";
+
 		pstmt = null;
-		
-		try {			
+
+		try {
 			pstmt = this.connection.prepareStatement(sql);
 			pstmt.execute();
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		}finally{
+		}
+
+		sql = "DELETE FROM Users";
+
+		pstmt = null;
+
+		try {
+			pstmt = this.connection.prepareStatement(sql);
+			pstmt.execute();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
 			try {
 				pstmt.close();
 				this.connection.close();
-			} catch (Exception e) {}			
+			} catch (Exception e) {
+			}
 		}
 	}
 }

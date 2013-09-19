@@ -95,7 +95,8 @@ public class MySteps {
 	
 	@Then("the user $name is inserted on the database")
 	public void assertUserIsOnTheDatabase(String name) {
-		
+		CheckDaoImpl checkDAOcondition = new CheckDaoImpl();
+		Assert.assertTrue(checkDAOcondition.consultaUser(name) != null);
 	}
 	
 
