@@ -40,8 +40,7 @@ public class MySteps {
 		// limpar as tabelas, cadastrar usuário com email: usuarioemail@email.com
 		User user = new User();
 		CheckDaoImpl checkDAOcondition = new CheckDaoImpl();
-		user = checkDAOcondition.consultaUser("teste01");
-		System.out.println(user.getEmail());
+		checkDAOcondition.limpaLista();
 	}
 	
 	@When("I login as $user with password $passwd")
