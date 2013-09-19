@@ -11,22 +11,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import syp.utils.Util;
+
 public class PropertyWebdriver {
 	public enum browserType {
 		FIREFOX, IE, CHROME
 	}
 
 	public static WebDriver getDriver() {
-		Properties properties = new Properties();
-		try {
-			File file = new File("syp.properties");
-			properties.load(new FileReader(file));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		browserType browser = browserType.valueOf(properties.getProperty("browser", "FIREFOX"));
+		browserType browser = browserType.valueOf(Util.readProperty("browser", "FIREFOX"));
 		switch (browser) {
 		case CHROME:
 			// Please define here the path for your Chrome driver
